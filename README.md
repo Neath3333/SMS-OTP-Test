@@ -1,4 +1,4 @@
-# PlasGate OTP API
+#  OTP API
 
 Simple OTP (One-Time Password) API server using PlasGate SMS service.
 
@@ -178,17 +178,6 @@ const CONFIG = {
 - Format: `855XXXXXXXX` (Cambodia)
 - Example: `85512345678` or `85598765432`
 
-## Security Notes
-
-⚠️ **IMPORTANT:**
-1. ✅ **Never commit `.env` file** to Git (already in `.gitignore`)
-2. ✅ **Keep credentials private** - Don't share your API keys
-3. ⚠️ **For Production:**
-   - Use a real database instead of in-memory storage
-   - Add authentication to protect API endpoints
-   - Enable HTTPS
-   - Add request logging and monitoring
-   - Use environment variables in production (Heroku, AWS, etc.)
 
 ## Files
 
@@ -210,5 +199,4 @@ const CONFIG = {
 
 ## Support
 
-- PlasGate API: https://web.plasgate.com/support/
 - Express.js: https://expressjs.com/
