@@ -1,0 +1,22 @@
+{
+  "name": "plasgate-otp-demo",
+  "version": "1.0.0",
+  "description": "Complete OTP verification system with PlasGate SMS API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "otp",
+    "sms",
+    "verification",
+    "plasgate"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3"
+  }
+}
