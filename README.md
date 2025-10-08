@@ -4,11 +4,15 @@ Simple OTP (One-Time Password) API server using PlasGate SMS service.
 
 ## Features
 
-✅ Send OTP via SMS
-✅ Verify OTP codes
-✅ Auto-expiration (5 minutes)
-✅ Rate limiting (1 OTP per minute)
-✅ Attempt limiting (3 tries max)
+ Send OTP via SMS
+ 
+ Verify OTP codes
+ 
+ Auto-expiration (5 minutes)
+ 
+ Rate limiting (1 OTP per minute)
+ 
+ Attempt limiting (3 tries max)
 
 ## Setup
 
