@@ -1,59 +1,21 @@
-# PlasGate OTP Testing API
+# PlasGate OTP API
 
-Complete OTP (One-Time Password) verification system demonstration using **PlasGate SMS API** - Cambodia's largest and most trusted SMS gateway service.
+Simple OTP (One-Time Password) API server using PlasGate SMS service.
 
----
+## Features
 
-## About PlasGate
+✅ Send OTP via SMS
+✅ Verify OTP codes
+✅ Auto-expiration (5 minutes)
+✅ Rate limiting (1 OTP per minute)
+✅ Attempt limiting (3 tries max)
 
-**PlasGate Co., Ltd.** is Cambodia's premier mobile cloud communication gateway and the **only company authorized** by all major telecom operators in the country.
+## Setup
 
-### Why PlasGate?
-
-- **Exclusive Authorization** - Official partner of Smart, Cellcard, Metfone, SeaTel, qb, and CooTel
-- **Largest SMS Gateway** - Cambodia's #1 SMS service provider
-- **Enterprise Grade** - Trusted by major institutions (ABA Bank, Wing, Canadia Bank)
-- **Multi-Channel** - SMS, Voice, and IP communication APIs
-- **Security First** - VPN and IP lock security features
-- **Easy Integration** - Well-documented API for rapid development
-
-### PlasGate Services
-
-- **SMS API** - One-time passwords, reminders, notifications, marketing campaigns
-- **Voice API** - Voice calls and IVR systems
-- **IP Communication** - Virtual Private Network (VPN) with security features
-- **Enterprise Support** - Dedicated customer service and technical assistance
-
-### Contact PlasGate
-
-- **Website**: [https://plasgate.com/](https://plasgate.com/)
-- **Email**: sales@plasgate.com
-- **Phone**: +855 69 333 575
-- **Portal**: [https://cloud.plasgate.com/](https://cloud.plasgate.com/)
-
----
-
-## Project Features
-
-This demonstration project showcases PlasGate's SMS API capabilities for OTP authentication:
-
-- **Send OTP via SMS** - Generate and deliver secure 6-digit codes
-- **Verify OTP Codes** - Validate user input with secure verification
-- **Auto-Expiration** - OTPs expire after 5 minutes for security
-- **Rate Limiting** - 1 OTP per phone number per minute
-- **Attempt Limiting** - Maximum 3 verification attempts
-- **Web Interface** - Simple UI for testing OTP functionality
-- **RESTful API** - Clean endpoints for integration
-
----
-
-## Setup Instructions
-
-### 1. Install Dependencies
-
-```bash
-npm install
-```
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
 ### 2. Configure PlasGate Credentials
 
@@ -249,82 +211,27 @@ const CONFIG = {
 
 ## Phone Number Format
 
-PlasGate SMS API requires Cambodia phone number format:
+- Must be 11 digits
+- Format: `855XXXXXXXX` (Cambodia)
+- Example: `85512345678` or `85598765432`
 
-- **Length**: 11 digits
-- **Format**: `855XXXXXXXX`
-- **Country Code**: 855 (Cambodia)
-- **Examples**:
-  - `85512345678` (Smart)
-  - `85598765432` (Cellcard)
-  - `85510987654` (Metfone)
+## Security Notes
 
-**Supported Operators** (via PlasGate authorization):
-- Smart
-- Cellcard
-- Metfone
-- SeaTel
-- qb
-- CooTel
+⚠️ **IMPORTANT:**
+1. ✅ **Never commit `.env` file** to Git (already in `.gitignore`)
+2. ✅ **Keep credentials private** - Don't share your API keys
+3. ⚠️ **For Production:**
+   - Use a real database instead of in-memory storage
+   - Add authentication to protect API endpoints
+   - Enable HTTPS
+   - Add request logging and monitoring
+   - Use environment variables in production (Heroku, AWS, etc.)
 
----
+## Files
 
-## Security & Best Practices
-
-### IMPORTANT Security Notes
-
-1. **Never commit `.env` file** - Already in `.gitignore`
-2. **Keep API credentials private** - Don't share PlasGate keys
-3. **Rate limiting** - Prevent abuse with request throttling
-4. **OTP expiration** - Codes expire after 5 minutes
-5. **Attempt limiting** - Max 3 tries to prevent brute force
-
-### Production Recommendations
-
-For production deployment with PlasGate:
-
-1. **Database Integration**
-   - Replace in-memory storage with PostgreSQL/MongoDB
-   - Store OTP history and audit logs
-
-2. **API Authentication**
-   - Protect endpoints with JWT or API keys
-   - Implement user authentication
-
-3. **HTTPS/SSL**
-   - Enable HTTPS for encrypted communication
-   - Use SSL certificates (Let's Encrypt)
-
-4. **Monitoring & Logging**
-   - Track PlasGate API usage and costs
-   - Monitor delivery rates and failures
-   - Set up alerts for critical errors
-
-5. **Environment Management**
-   - Use proper environment variables (AWS Secrets Manager, Heroku Config)
-   - Separate dev/staging/production PlasGate credentials
-
-6. **Backup Providers**
-   - Consider fallback SMS providers for redundancy
-   - Monitor PlasGate service status
-
----
-
-## Project Structure
-
-```
-sms-test/
-├── server.js                 # Main Express API server
-├── send-otp.js              # PlasGate OTP utilities
-├── public/                  # Web interface
-│   └── index.html           # OTP testing UI
-├── package.json             # Dependencies
-├── .env                     # PlasGate credentials (gitignored)
-├── .env.example             # Template for credentials
-└── PLASGATE-OTP-TEST.md     # This file
-```
-
----
+- `server.js` - Main API server
+- `send-otp.js` - OTP utilities (optional, for standalone use)
+- `package.json` - Dependencies
 
 ## Troubleshooting
 
@@ -397,34 +304,5 @@ cat .env
 
 ## Support
 
-### PlasGate Support
-- **Email**: sales@plasgate.com
-- **Phone**: +855 69 333 575
-- **Facebook**: [PlasGate Co., Ltd.](https://www.facebook.com/plasgate/)
-
-### Technical Support
-For issues with this demo project, check:
-1. PlasGate API status and credentials
-2. Server logs for detailed error messages
-3. Network connectivity and firewall settings
-
----
-
-## License
-
-ISC License - Free to use for testing and learning PlasGate SMS API integration.
-
----
-
-## Next Steps
-
-Ready to integrate PlasGate into your production app?
-
-1. **Sign up** at [cloud.plasgate.com](https://cloud.plasgate.com/)
-2. **Get API credentials** from your dashboard
-3. **Test this demo** to understand the workflow
-4. **Implement** OTP in your application
-5. **Deploy** with production-grade security
-6. **Monitor** delivery rates and optimize
-
-**PlasGate** - Cambodia's most reliable SMS gateway for your business needs!
+- PlasGate API: https://web.plasgate.com/support/
+- Express.js: https://expressjs.com/
